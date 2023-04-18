@@ -1,13 +1,20 @@
-import React from "react";
+import React,{useState} from "react";
 import Stock from "./Stock";
 
-function PortfolioContainer() {
+function PortfolioContainer({selected,setSelected,removeData}) {
+  
+
+
+
   return (
-    <div>
+    <div >
       <h2>My Portfolio</h2>
-      {
-        //render your portfolio stocks here
-      }
+      <div onClick={removeData}>
+        {
+        selected.map((data)=>  <Stock data={data} addPorfolio={removeData}/>)}
+      </div>
+       
+      
     </div>
   );
 }
